@@ -34,5 +34,5 @@ If you have any questions about my script or need any help, get in touch --> ale
 ### What am I supposed to do with the data?
 Whatever the heck you want. Do some data science, journalism stuff, or make something cool or whatever.
 
-### If I use this do I owe you a life debt
-No, but I'd love to hear what you use the data for.
+### If I use this do I owe you a life debt?
+What??! No, but I'd love to hear what you use the data for.
