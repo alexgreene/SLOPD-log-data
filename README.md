@@ -35,4 +35,4 @@ If you have any questions about my script or need any help, get in touch --> ale
 Whatever the heck you want. Do some data science, journalism stuff, or make something cool or whatever.
 
 ### If I use this do I owe you a life debt
-No, but I'd love to hear what you use the data for. email: alexgrn7@gmail.com / or / twitter: @alexg473
+No, but I'd love to hear what you use the data for.
