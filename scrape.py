@@ -15,7 +15,7 @@ cut_footer = text.split('-------------------------------------------------------
 els = cut_footer.split('===============================================================================')
 
 header = els.pop(0)
-new_log_number = oreo(header, 'Police Department', '\n')
+new_log_day = oreo(header, '\n', 'Summary Report').strip()
 
 print 'DOWNLOADING SLO POLICE DATA...'
 
@@ -45,10 +45,10 @@ for el in els:
     i += 1
 
 update_file = open('/Users/alexg/Documents/data/slo-pd-logs/update_file.txt', 'r')
-prev_log_number = update_file.read()
+prev_log_day = update_file.read()
 update_file.close()
 
-if new_log_number != prev_log_number:
+if new_log_day != prev_log_day:
     log_file = open('/Users/alexg/Documents/data/slo-pd-logs/logfile.csv', 'a')
     wr = csv.writer(log_file)
     for item in items:
@@ -56,7 +56,7 @@ if new_log_number != prev_log_number:
             item['type'], item['observed_type'], item['location'], item['officer'], item['units'], item['comments']])    
 
     update_file = open('/Users/alexg/Documents/data/slo-pd-logs/update_file.txt', 'w')
-    update_file.write(new_log_number)
+    update_file.write(new_log_day)
     update_file.close()
 
 
