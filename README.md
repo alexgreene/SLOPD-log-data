@@ -15,18 +15,15 @@ YES!
 - If you don't know how to use the command line, you'll need to learn that first to use the following commands;
 - Make sure you have the following python packages installed: lxml, requests, csv, and python-crontab. To install them, first make sure you have pip installed (on OSX: 'sudo easy_install pip'). For each package 'sudo pip install lxml', 'sudo pip install python-crontab', etc, etc.
 - Run the script with 'python scrape.py'
-- Now you'll want to set up a cron job so that the script collects new data every time the police department updates the log. To do this, type python on the command line to start a new python console. The following command will set up a cron job: 
+- Now you'll want to set up a cron job so that the script collects new data every time the police department updates the log. The following terminal commands will set up a cron job: 
 
-```>>> from crontab import CronTab```
+  
 
-```>>> cron = CronTab()``` 
+```crontab -e```
+and then 
+```* */5 * * * /usr/bin/python /Users/alexg/Documents/data/slo-pd-logs/scrape.py``` (but replace the /Users/... with your own file path)
 
-```>>> job = cron.new(command='/usr/bin/python /Users/alexg/Documents/data/slo-pd-logs/scrape.py')```  
-(but replace the /Users/... with your own file path) 
-
-```>>> job.hour.every(12)```  
-
-> Every 12 hours the script will now run and check if there is new data to be appended to the csv file. If you want to edit the csv, make a copy and work on it elsewhere, as not to disturb the script!  
+> Every 5 hours the script will now run and check if there is new data to be appended to the csv file. If you want to edit the csv, make a copy and work on it elsewhere, as not to disturb the script!  You can check that the cron job exists withe terminal command ```crontab -l```
 
 You can read more about python-crontab here https://pypi.python.org/pypi/python-crontab  
 If you have any questions about my script or need any help, get in touch --> alexgrn7@gmail.com or @alexg473
